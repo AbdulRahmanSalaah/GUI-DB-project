@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "diAlhEJjdi6qIs5fLZNh+KCHrkv01R7vnt0KTAPtLVDCY7N3tB9M475Y1SGCdlAnIZHbj6oysd5uRJDuOBURNw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\abulrahmansalah\\Desktop\\Connect to Database using C# - by Ahmed Galal\\SWD4CS-main\\SWD4CS-main\\SWD4CS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abulrahmansalah\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\abulrahmansalah\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\abulrahmansalah\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\abulrahmansalah\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

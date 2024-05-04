@@ -1,0 +1,14 @@
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\bin\Debug\net6.0-windows\SWD4CS.exe
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\bin\Debug\net6.0-windows\SWD4CS.deps.json
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\bin\Debug\net6.0-windows\SWD4CS.runtimeconfig.json
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\bin\Debug\net6.0-windows\SWD4CS.dll
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\bin\Debug\net6.0-windows\SWD4CS.pdb
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.AssemblyInfoInputs.cache
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.AssemblyInfo.cs
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.csproj.CoreCompileInputs.cache
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.dll
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\refint\SWD4CS.dll
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.pdb
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\SWD4CS.genruntimeconfig.cache
+C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\obj\Debug\net6.0-windows\ref\SWD4CS.dll
