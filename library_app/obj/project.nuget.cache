@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YFH84Autywc3rmWARvhxXdYhQuT2QIkfKTGlH8s+Yu/3ot7/1RrNDLkk/ekJqqWwzblM75WwGroigCewl4RhMw==",
+  "dgSpecHash": "ojfoXJTnahiD9a3FpN70Jrk3gWd9zpfnZMmPLp2YP1CRdxZ2/OUIbcen4CZjeyy+/pNYEVlOAIcy9LP8th3F2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\library_app.csproj",
+  "projectFilePath": "c:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\library_app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP_M\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\HP_M\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -14,5 +14,12 @@
     "C:\\Users\\HP_M\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\HP_M\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file c:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

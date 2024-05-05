@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
-
+//.
 
 
 namespace library_app
@@ -19,7 +19,7 @@ namespace library_app
         //private string author_id;
 
 
-        public main_admin( string adminId )
+        public main_admin(string adminId)
         {
             this.adminId = adminId;
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace library_app
 
         }
 
-        public main_admin ()
+        public main_admin()
         {
             InitializeComponent();
             Button2.Click += Button2_Click;
@@ -68,10 +68,15 @@ namespace library_app
             update_book.Show();
 
 
+
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
+
+            // this.Hide();
+            BrowseBooks BrowseBooks = new BrowseBooks();
+            BrowseBooks.Show();
 
 
         }
