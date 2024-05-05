@@ -167,8 +167,10 @@ namespace library_app
 
 
 
+                string userId = TextBox16.Text;
                 this.Hide();
-
+                main_User main_User = new main_User(userId);
+                main_User.Show();
 
 
 

@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\library_app.csproj",
+      "projectUniqueName": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DBB\\GUI-DB-project\\library_app\\library_app.csproj",
       "projectName": "library_app",
-      "projectPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\library_app.csproj",
+      "projectPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DBB\\GUI-DB-project\\library_app\\library_app.csproj",
       "packagesPath": "C:\\Users\\abulrahmansalah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\obj\\",
+      "outputPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DBB\\GUI-DB-project\\library_app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abulrahmansalah\\AppData\\Roaming\\NuGet\\NuGet.Config"
