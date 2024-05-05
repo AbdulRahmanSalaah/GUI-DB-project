@@ -34,7 +34,7 @@ namespace library_app
 
         private void Button1_Click(object? sender, EventArgs e)
         {
-            var datasource = @"LAPTOP-DG70P2RU";//your server
+            var datasource = @"REVISION-PC";//your server
             // var datasource = @"OMAR";//your server
             var database = "LibraryDatabase"; //your database name
             string connString = @"Data Source=" + datasource + ";Initial Catalog="

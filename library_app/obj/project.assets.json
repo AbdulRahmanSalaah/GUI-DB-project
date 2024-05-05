@@ -470,19 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abulrahmansalah\\.nuget\\packages\\": {}
+    "C:\\Users\\HP_M\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\library_app.csproj",
+      "projectUniqueName": "C:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\library_app.csproj",
       "projectName": "library_app",
-      "projectPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\library_app.csproj",
-      "packagesPath": "C:\\Users\\abulrahmansalah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abulrahmansalah\\Desktop\\GUI-DB\\library_app\\obj\\",
+      "projectPath": "C:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\library_app.csproj",
+      "packagesPath": "C:\\Users\\HP_M\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP_M\\My_GitHub\\GUI-DB-project\\library_app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\abulrahmansalah\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\HP_M\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
