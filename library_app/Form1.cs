@@ -86,6 +86,7 @@ namespace library_app
 
         private void Button17_Click(object sender, EventArgs e)
         {
+            //  var datasource = @"REVISION-PC";
             var datasource = @"LAPTOP-DG70P2RU";//your server
             var database = "LibraryDatabase"; //your database name
             // var username = "sa"; //username of server to connect
@@ -157,6 +158,7 @@ namespace library_app
 
                 com2.ExecuteNonQuery();
                 command.ExecuteNonQuery(); //execute the Query
+                
 
 
 
@@ -171,6 +173,8 @@ namespace library_app
                 this.Hide();
                 main_User main_User = new main_User(userId);
                 main_User.Show();
+
+
 
 
 

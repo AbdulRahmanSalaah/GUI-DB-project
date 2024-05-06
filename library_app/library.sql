@@ -10,7 +10,7 @@ CREATE TABLE pub_Phone (
   pub_phone VARCHAR(255) primary key,
 );
 CREATE TABLE stu_Phone (
-  s_id varchar(255),
+  s_id varchar(255) ,
   st_phone VARCHAR(255) primary key,
 );
 
@@ -57,7 +57,7 @@ CREATE TABLE Student (
   B_date VARCHAR(255),
   age INTEGER,
   St_phone VARCHAR(255),
-  FOREIGN KEY (St_phone) REFERENCES stu_Phone(St_phone)
+  FOREIGN KEY (St_phone) REFERENCES stu_Phone(st_phone)
 );
 
 CREATE TABLE Copy (

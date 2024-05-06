@@ -54,7 +54,6 @@
 //             try
 //             {
 
-
 //                 conn.Open();
 
 //                 MessageBox.Show("Connection Successful...");
@@ -72,7 +71,6 @@
 //                 command.Parameters.AddWithValue("@St_phone", TextBox7.Text);
 //                 command.Parameters.AddWithValue("@s_id", userId);
 //                 command.ExecuteNonQuery();
-
 
 //                 string sqlQueryUpdateStuPhone = "UPDATE stu_phone SET st_phone = @st_phone WHERE s_id = @s_id";
 //                 SqlCommand commandUpdateStuPhone = new SqlCommand(sqlQueryUpdateStuPhone, conn);
@@ -136,7 +134,7 @@ namespace library_app
 
         private void Button20_Click(object? sender, EventArgs e)
         {
-            // var datasource = @"REVISION-PC";
+            //  var datasource = @"REVISION-PC";
             var datasource = @"LAPTOP-DG70P2RU";
             var database = "LibraryDatabase";
 

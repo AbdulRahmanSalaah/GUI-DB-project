@@ -14,6 +14,10 @@ namespace library_app
 
 
         private string adminId;
+        private string ISBN;
+        //private string pub_id;
+        //private string author_id;
+
 
         public main_admin(string adminId)
         {
@@ -59,6 +63,9 @@ namespace library_app
         }
         private void Button4_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            update_book update_book = new update_book(adminId);
+            update_book.Show();
 
 
 

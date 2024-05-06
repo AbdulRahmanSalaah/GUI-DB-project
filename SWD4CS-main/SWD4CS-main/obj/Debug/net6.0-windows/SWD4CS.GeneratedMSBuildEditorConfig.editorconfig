@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SWD4CS
-build_property.ProjectDir = C:\Users\abulrahmansalah\Desktop\Connect to Database using C# - by Ahmed Galal\SWD4CS-main\SWD4CS-main\
+build_property.ProjectDir = c:\Users\HP_M\My_GitHub\GUI-DB-project\SWD4CS-main\SWD4CS-main\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
