@@ -15,45 +15,25 @@ namespace library_app
 
 
         private string ISBN;
-        //private string pub_id;
-        //private string author_id;
         private string  adminId;
 
-        public update_book(string ISBN , string  adminId)
+        public update_book(string  adminId)
         {
             InitializeComponent();
-            this.ISBN = ISBN; // Store the ID passed from the insert page
-            //this.pub_id = pub_id;
-            //this.author_id = author_id;
-            this.adminId =  adminId;
-            // PopulateFormData(); // Populate the form with the existing data
+            this.adminId =  adminId; 
             Button17.Click += Button17_Click;
         }
-        // public update_admin()
-        // {
-        //     InitializeComponent();
-        //     Button0.Click += Button0_Click;
-
-
-        // }
-
+        
         private void Button17_Click(object? sender, EventArgs e)
         {
             var datasource = @"REVISION-PC";
             //var datasource = @"LAPTOP-DG70P2RU";//your server
             var database = "LibraryDatabase"; //your database name
-            // var username = "sa"; //username of server to connect
-            // var password = "password"; //password
-            // string connString = "Server=localhost;Database=YourDatabaseName;Integrated Security=True;";
-
-
-            // your connection string 
+            
             string connString = @"Data Source=" + datasource + ";Initial Catalog="
                        + database + ";Persist Security Info=True;Integrated Security=True;";
 
-            // string connString = "Server= localhost; Database= LibraryDatabase; Integrated Security=True;";
-            // string connString = "Server= LAPTOP-DG70P2RU; Database= LibraryDatabase; Integrated Security=True;";
-            // string connString = "Data Source=LAPTOP-DG70P2RU;Initial Catalog=LibraryDatabase;Integrated Security=True;";
+            
             SqlConnection conn = new SqlConnection(connString);
 
 
@@ -65,54 +45,67 @@ namespace library_app
 
                 MessageBox.Show("Connection Successful...");
 
-                // string sqlQueryUpdatePubphone = "UPDATE pub_Phone SET pub_phone = @pub_phone WHERE pub_id = @pub_id ";
-                // SqlCommand command0 = new SqlCommand(sqlQueryUpdatePubphone, conn);
-                // command0.Parameters.AddWithValue("@pub_phone", TextBox16.Text);
-                // command0.Parameters.AddWithValue("@pub_id", pub_id);
+                string ISBN = TextBox15.Text;
 
-                // string sqlQueryUpdatePub = "UPDATE Publisher SET pub_phone = @pub_phone WHERE pub_id = @pub_id ";
-                // SqlCommand command3 = new SqlCommand(sqlQueryUpdatePub, conn);
-                // command3.Parameters.AddWithValue("@pub_phone", TextBox16.Text);
-                // command3.Parameters.AddWithValue("@pub_id", pub_id);
+                string sqlQueryAuthorId = "SELECT author_id FROM BOOK WHERE ISBN = @ISBN";
+                SqlCommand commandAuthorId = new SqlCommand(sqlQueryAuthorId, conn);
+                commandAuthorId.Parameters.AddWithValue("@ISBN", ISBN);
+                string author_id = commandAuthorId.ExecuteScalar()?.ToString();
 
-                // string sqlQueryUpdateAdmin = "UPDATE Publisher SET pub_phone = @pub_phone WHERE pub_id = @pub_id ";
-                // SqlCommand command4 = new SqlCommand(sqlQueryUpdateAdmin, conn);
-                // command4.Parameters.AddWithValue("@pub_phone", TextBox16.Text);
-                // command4.Parameters.AddWithValue("@pub_id", pub_id);
-
-
-                // string sqlQueryUpdateAuthor = "UPDATE author SET name = @name WHERE author_id = @author_id ";
-                // SqlCommand command2 = new SqlCommand(sqlQueryUpdateAuthor, conn);
-                // command2.Parameters.AddWithValue("@name", TextBox10.Text);
-                // command2.Parameters.AddWithValue("@author_id", author_id);
+                if (author_id != null)
+                {
+                    string sqlQueryUpdateAuthor = @"UPDATE author
+                                                SET name = @name
+                                                WHERE author_id = @author_id";
+                    SqlCommand commandUpdatePub = new SqlCommand(sqlQueryUpdateAuthor, conn);
+                    commandUpdatePub.Parameters.AddWithValue("@name", TextBox10.Text);
+                    commandUpdatePub.Parameters.AddWithValue("@author_id", author_id);
+                    commandUpdatePub.ExecuteNonQuery();
+                }
 
 
-                string sqlQueryUpdate = "UPDATE BOOK SET Book_name = @Book_name , year = @year ,number_of_copies = @number_of_copies  WHERE ISBN = @ISBN ";
-                SqlCommand command1 = new SqlCommand(sqlQueryUpdate, conn);
-                command1.Parameters.AddWithValue("@Book_name", TextBox18.Text);
-                command1.Parameters.AddWithValue("@year", TextBox2.Text);
-                command1.Parameters.AddWithValue("@number_of_copies", TextBox6.Text);
-                command1.Parameters.AddWithValue("@ISBN", ISBN);
+                string sqlQueryPUPId = "SELECT pub_id FROM BOOK WHERE ISBN = @ISBN";
+                SqlCommand commandPUPId = new SqlCommand(sqlQueryPUPId, conn);
+                commandPUPId.Parameters.AddWithValue("@ISBN", ISBN);
+                string pub_id = commandAuthorId.ExecuteScalar()?.ToString();
 
+                if (pub_id != null)
+                {
+                    string sqlQueryUpdatePUP = @"UPDATE Publisher
+                                                SET name = @name
+                                                WHERE pub_id = @pub_id";
+                    SqlCommand commandUpdatePub = new SqlCommand(sqlQueryUpdatePUP, conn);
+                    commandUpdatePub.Parameters.AddWithValue("@name", TextBox14.Text);
+                    commandUpdatePub.Parameters.AddWithValue("@pub_id", pub_id);
+                    commandUpdatePub.ExecuteNonQuery();
+                }
 
-
-
-                
-                // command0.ExecuteNonQuery();
-                // command2.ExecuteNonQuery();
-                // command3.ExecuteNonQuery();
-                command1.ExecuteNonQuery();
                
-                
 
-                MessageBox.Show("Executing Query...");
+                string sqlQueryUpdate = @"UPDATE BOOK 
+                                        SET Book_name = @Book_name, 
+                                            year = @year, 
+                                            number_of_copies = @number_of_copies 
+                                        WHERE ISBN = @ISBN";
+                SqlCommand command = new SqlCommand(sqlQueryUpdate, conn);
+                command.Parameters.AddWithValue("@ISBN", ISBN);
+                command.Parameters.AddWithValue("@Book_name", TextBox18.Text);
+                command.Parameters.AddWithValue("@year", TextBox2.Text);
+                command.Parameters.AddWithValue("@number_of_copies", Convert.ToInt32(TextBox6.Text)); 
 
-                MessageBox.Show("Updated Successfully!");
-
-
-                this.Hide();
-                main_admin main = new main_admin(adminId);
-                main.Show();
+                int updatedDetails = command.ExecuteNonQuery();
+                if (updatedDetails > 0)
+                {
+                    MessageBox.Show("Executing Query...");
+                    MessageBox.Show("Book details updated successfully!");
+                    this.Hide();
+                    main_admin main_admin = new main_admin(adminId);
+                    main_admin.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No book found with the provided ISBN.");
+                }
 
 
             }

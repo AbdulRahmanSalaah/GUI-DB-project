@@ -14,7 +14,7 @@ namespace library_app
         public BrowseBooks()
         {
             InitializeComponent();
-            string connString = @"Data Source=LAPTOP-DG70P2RU;Initial Catalog=LibraryDatabase;Integrated Security=True;";
+            string connString = @"Data Source=REVISION-PC;Initial Catalog=LibraryDatabase;Integrated Security=True;";
             conn = new SqlConnection(connString);
             LoadData();
         }

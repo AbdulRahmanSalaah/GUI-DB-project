@@ -1,6 +1,4 @@
 -- Create the database
-use master;
-drop database LibraryDatabase;
 
 CREATE DATABASE LibraryDatabase;
 USE LibraryDatabase;

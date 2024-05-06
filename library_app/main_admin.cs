@@ -64,7 +64,7 @@ namespace library_app
         private void Button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            update_book update_book = new update_book(ISBN , adminId);
+            update_book update_book = new update_book(adminId);
             update_book.Show();
 
 

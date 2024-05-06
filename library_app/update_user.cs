@@ -134,8 +134,8 @@ namespace library_app
 
         private void Button20_Click(object? sender, EventArgs e)
         {
-            // var datasource = @"REVISION-PC";
-            var datasource = @"LAPTOP-DG70P2RU";
+             var datasource = @"REVISION-PC";
+            //var datasource = @"LAPTOP-DG70P2RU";
             var database = "LibraryDatabase";
 
             string connString = @"Data Source=" + datasource + ";Initial Catalog="

@@ -23,15 +23,12 @@ namespace library_app
 
         private void Button1_Click(object? sender, EventArgs e)
         {
-<<<<<<< HEAD
             var datasource = @"REVISION-PC";//your server
             // var datasource = @"OMAR";//your server
             var database = "LibraryDatabase"; //your database name
-=======
             // var datasource = @"OMAR"; // your server
-            var datasource = @"LAPTOP-DG70P2RU"; // your server
-            var database = "LibraryDatabase"; // your database name
->>>>>>> 1cbd50bed282827277b056262c2675b4049a2907
+            // var datasource = @"LAPTOP-DG70P2RU"; // your server
+            // var database = "LibraryDatabase"; // your database name
             string connString = @"Data Source=" + datasource + ";Initial Catalog="
                        + database + ";Persist Security Info=True;Integrated Security=True;";
 
