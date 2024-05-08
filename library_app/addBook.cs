@@ -48,17 +48,17 @@ namespace library_app
                 MessageBox.Show("Connection Successful...");
 
                 // Check if the provided publisher phone exists in the pub_Phone table
-                SqlCommand phoneCheckCommand = new SqlCommand("SELECT COUNT(*) FROM pub_Phone WHERE pub_phone = @pub_phone", conn);
-                phoneCheckCommand.Parameters.AddWithValue("@pub_phone", RichTextBox16.Text);
-                int phoneCount = (int)phoneCheckCommand.ExecuteScalar();
+                // SqlCommand phoneCheckCommand = new SqlCommand("SELECT COUNT(*) FROM pub_Phone WHERE pub_phone = @pub_phone", conn);
+                // phoneCheckCommand.Parameters.AddWithValue("@pub_phone", RichTextBox16.Text);
+                // int phoneCount = (int)phoneCheckCommand.ExecuteScalar();
 
-                // Insert into pub_Phone table only if the provided pub_phone doesn't exist
-                if (phoneCount == 0)
-                {
-                    SqlCommand com1 = new SqlCommand("INSERT INTO pub_Phone(pub_phone) VALUES (@pub_phone)", conn);
-                    com1.Parameters.AddWithValue("@pub_phone", RichTextBox16.Text);
-                    com1.ExecuteNonQuery();
-                }
+                // // Insert into pub_Phone table only if the provided pub_phone doesn't exist
+                // if (phoneCount == 0)
+                // {
+                //     SqlCommand com1 = new SqlCommand("INSERT INTO pub_Phone(pub_phone) VALUES (@pub_phone)", conn);
+                //     com1.Parameters.AddWithValue("@pub_phone", RichTextBox16.Text);
+                //     com1.ExecuteNonQuery();
+                // }
 
                 // Check if the provided publisher ID already exists
                 SqlCommand pubCheckCommand = new SqlCommand("SELECT COUNT(*) FROM Publisher WHERE pub_id = @pub_id", conn);
@@ -103,7 +103,7 @@ namespace library_app
                 MessageBox.Show("Inserted Successfully!");
                 this.Hide();
                 main_admin main = new main_admin(adminId);
-                main.Show();
+                // main.Show();
             }
             catch (Exception ex)
             {

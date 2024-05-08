@@ -100,7 +100,8 @@ namespace library_app
                     MessageBox.Show("Book details updated successfully!");
                     this.Hide();
                     main_admin main_admin = new main_admin(adminId);
-                    main_admin.Show();
+                    
+                    // main_admin.Show();
                 }
                 else
                 {

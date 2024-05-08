@@ -4,15 +4,7 @@ CREATE DATABASE LibraryDatabase;
 USE LibraryDatabase;
 
 -- Create the tables
-CREATE TABLE pub_Phone (
-  
-  pub_id varchar(255) ,
-  pub_phone VARCHAR(255) primary key,
-);
-CREATE TABLE stu_Phone (
-  s_id varchar(255) ,
-  st_phone VARCHAR(255) primary key,
-);
+
 
 CREATE TABLE Admin (
   A_id varchar(255)  PRIMARY KEY,
@@ -25,7 +17,7 @@ CREATE TABLE Publisher (
   name VARCHAR(255),
   pub_id varchar(255)  PRIMARY KEY,
   pub_phone VARCHAR(255),
- FOREIGN KEY (pub_phone) REFERENCES pub_Phone(pub_phone)
+
 );
 
 CREATE TABLE author (
@@ -43,8 +35,8 @@ CREATE TABLE BOOK (
   pub_id varchar(255),
   author_id varchar(255),
   FOREIGN KEY (A_id) REFERENCES Admin(A_id),
-  FOREIGN KEY (pub_id) REFERENCES Publisher(pub_id),
-  FOREIGN KEY (author_id) REFERENCES author(author_id)
+   FOREIGN KEY (pub_id) REFERENCES Publisher(pub_id),
+	FOREIGN KEY (author_id) REFERENCES author(author_id)
 );
 
 CREATE TABLE Student (
@@ -57,7 +49,7 @@ CREATE TABLE Student (
   B_date VARCHAR(255),
   age INTEGER,
   St_phone VARCHAR(255),
-  FOREIGN KEY (St_phone) REFERENCES stu_Phone(st_phone)
+  
 );
 
 CREATE TABLE Copy (

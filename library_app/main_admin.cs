@@ -45,7 +45,7 @@ namespace library_app
         {
 
 
-            this.Hide();
+            // this.Hide();
             update_admin update_admin = new update_admin(adminId);
             update_admin.Show();
 
@@ -55,7 +55,7 @@ namespace library_app
         private void Button3_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+            // this.Hide();
             addBook addBook = new addBook(adminId);
             addBook.Show();
 
@@ -63,7 +63,7 @@ namespace library_app
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // this.Hide();
             update_book update_book = new update_book(adminId);
             update_book.Show();
 
