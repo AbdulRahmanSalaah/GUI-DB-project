@@ -34,6 +34,7 @@ CREATE TABLE BOOK (
   A_id varchar(255),
   pub_id varchar(255),
   author_id varchar(255),
+  is_borrowed INTEGER DEFAULT 0, -- Added column with default value
   FOREIGN KEY (A_id) REFERENCES Admin(A_id),
    FOREIGN KEY (pub_id) REFERENCES Publisher(pub_id),
 	FOREIGN KEY (author_id) REFERENCES author(author_id)
@@ -64,7 +65,7 @@ CREATE TABLE Borrow (
   Issue_date VARCHAR(255),
   s_id varchar(255) ,
   ISBN varchar(255) ,
-  PRIMARY KEY (s_id, ISBN),
+ -- PRIMARY KEY (s_id, ISBN),
   FOREIGN KEY (s_id) REFERENCES Student(s_id),
   FOREIGN KEY (ISBN) REFERENCES BOOK(ISBN)
 );

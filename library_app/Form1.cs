@@ -126,8 +126,8 @@ namespace library_app
 
                 // string sqlQueryInsert = "INSERT INTO LibraryDatabase.dbo.Student VALUES " +
                 //     "(@first_name, @last_name, @pass, @address, @mail,@B_date,@St_phone)";
-                string pho = "INSERT INTO stu_Phone ( st_phone,s_id) " +
-                         "VALUES ( @st_phone,@s_id)";
+                // string pho = "INSERT INTO stu_Phone ( st_phone,s_id) " +
+                //          "VALUES ( @st_phone,@s_id)";
 
                 string sqlQueryInsert = "INSERT INTO Student (first_name, last_name, pass, address, mail, B_date,St_phone,s_id) " +
                          "VALUES (@first_name, @last_name, @pass, @address, @mail, @B_date,@St_phone,@s_id)";
@@ -135,7 +135,7 @@ namespace library_app
 
 
 
-                SqlCommand com2 = new SqlCommand(pho, conn);
+                // SqlCommand com2 = new SqlCommand(pho, conn);
                 SqlCommand command = new SqlCommand(sqlQueryInsert, conn);
 
                 command.Parameters.AddWithValue("@first_name", TextBox2.Text);
@@ -144,10 +144,10 @@ namespace library_app
                 command.Parameters.AddWithValue("@address", TextBox8.Text);
                 command.Parameters.AddWithValue("@mail", TextBox10.Text);
                 command.Parameters.AddWithValue("@B_date", TextBox12.Text);
-                com2.Parameters.AddWithValue("@st_phone", TextBox14.Text);
+                // com2.Parameters.AddWithValue("@st_phone", TextBox14.Text);
                 command.Parameters.AddWithValue("@St_phone", TextBox14.Text);
                 command.Parameters.AddWithValue("@s_id", TextBox16.Text);
-                com2.Parameters.AddWithValue("@s_id", TextBox16.Text);
+                // com2.Parameters.AddWithValue("@s_id", TextBox16.Text);
 
 
 
@@ -156,7 +156,7 @@ namespace library_app
 
                 MessageBox.Show("Executing Query...");
 
-                com2.ExecuteNonQuery();
+                // com2.ExecuteNonQuery();
                 command.ExecuteNonQuery(); //execute the Query
                 
 
@@ -171,8 +171,12 @@ namespace library_app
 
                 string userId = TextBox16.Text;
                 this.Hide();
-                main_User main_User = new main_User(userId);
-                main_User.Show();
+                // main_User main_User = new main_User(userId);
+                // main_User.Show();
+                main main = new main();
+                main.Show();
+
+
 
 
 

@@ -28,7 +28,6 @@ namespace library_app
             Button4.Click += Button4_Click;
             Button5.Click += Button5_Click;
 
-
         }
 
         public main_admin()

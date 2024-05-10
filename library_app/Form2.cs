@@ -87,8 +87,11 @@ namespace library_app
 
 
                 this.Hide();
-                main_admin main_admin = new main_admin(adminId);
-                main_admin.Show();
+                // main_admin main_admin = new main_admin(adminId);
+                // main_admin.Show();
+
+                main main   = new main();
+                main.Show();
 
 
             }

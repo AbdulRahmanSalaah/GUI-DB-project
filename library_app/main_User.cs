@@ -40,7 +40,7 @@ namespace library_app
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // this.Hide();
             update_user update_user = new update_user(userId);
             update_user.Show();
 
@@ -64,6 +64,11 @@ namespace library_app
         // }
         private void Button4_Click(object sender, EventArgs e)
         {
+
+
+            // this.Hide();
+            StBrowseBooks stBrowseBooks = new StBrowseBooks(userId);
+            stBrowseBooks.Show();
 
 
         }
