@@ -101,34 +101,22 @@ namespace library_app
 
                     if (copies > 0)
                     {
-                        // string sqlUpdate = "UPDATE Book SET  number_of_copies = number_of_copies - 1 WHERE ISBN = @ISBN";
-                        // SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, conn);
-                        // cmdUpdate.Parameters.AddWithValue("@ISBN", isbn);
-
-                        // int rowsAffected = cmdUpdate.ExecuteNonQuery();
-
-                        
-                            // MessageBox.Show("Book borrowed successfully.");
-
-                            // LoadData(false);
-
-
-                            BorrowPage borrowPage = new BorrowPage(userId,isbn);
-                            // MessageBox.Show(isbn);
-                            // MessageBox.Show(userId);
-
-
-
-                            borrowPage.Show();
-
-
-                        
                        
+
+
+                        BorrowPage borrowPage = new BorrowPage(userId, isbn);
+                        // MessageBox.Show(isbn);
+                        // MessageBox.Show(userId);
+
+
+
+                        borrowPage.Show();
+
+
+
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Error: This book is not available for borrowing.");
-                    }
+                  
                 }
                 catch (Exception ex)
                 {

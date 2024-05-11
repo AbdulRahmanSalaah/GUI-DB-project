@@ -21,6 +21,7 @@ namespace library_app
             Button3.Click += Button3_Click;
             Button6.Click += Button6_Click;
             Button4.Click += Button4_Click;
+            RetrieveBooksButton.Click+= RetrieveBooksButton_Click;
 
 
 
@@ -59,6 +60,12 @@ namespace library_app
             login_admin.Show();
 
         }
+        private void RetrieveBooksButton_Click(object sender, EventArgs e){
+            report report = new report();
+            report.Show();
+
+        }
+
 
 
 

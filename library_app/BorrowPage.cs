@@ -74,12 +74,45 @@ namespace library_app
                 SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, conn);
                 cmdUpdate.Parameters.AddWithValue("@ISBN", isbn);
 
+
+
                 cmdUpdate.ExecuteNonQuery();
 
 
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Book Borrowed Successfully");
+
+
+                // ---------------------------------------------- check num of copy it zero delete the book
+
+                string sqlCheckCopies = "SELECT number_of_copies FROM Book WHERE ISBN = @ISBN";
+                SqlCommand cmdCheckCopies = new SqlCommand(sqlCheckCopies, conn);
+                cmdCheckCopies.Parameters.AddWithValue("@ISBN", isbn);
+
+                int copies = Convert.ToInt32(cmdCheckCopies.ExecuteScalar());
+
+                if (copies == 0)
+                {
+                    string deletfromborrow = "DELETE FROM Borrow where ISBN =@ISBN ";
+
+                    SqlCommand del = new SqlCommand(deletfromborrow, conn);
+                    del.Parameters.AddWithValue("@ISBN", isbn);
+                    del.ExecuteNonQuery();
+
+
+
+                    string sqlDelete = "DELETE FROM Book WHERE ISBN = @ISBN";
+                    SqlCommand cmdDelete = new SqlCommand(sqlDelete, conn);
+                    cmdDelete.Parameters.AddWithValue("@ISBN", isbn);
+
+
+                    cmdDelete.ExecuteNonQuery();
+                }
+
+
+
+
                 this.Hide();
             }
             catch (Exception ex)

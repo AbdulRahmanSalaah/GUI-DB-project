@@ -34,16 +34,19 @@
             this.Button3 = new System.Windows.Forms.Button();
             this.Button4 = new System.Windows.Forms.Button();
             this.Button6 = new System.Windows.Forms.Button();
+         this.RetrieveBooksButton = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
             //
             // Label0
             //
             this.Label0.AutoSize =  true;
-            this.Label0.Text =  "Welcome...";
+            this.Label0.Text = "Welcome to Library App";
             this.Label0.BackColor = System.Drawing.Color.LightBlue;
             this.Label0.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label0.Location = new System.Drawing.Point(332,52);
-            this.Label0.Size = new System.Drawing.Size(293,65);
+        this.Label0.Location = new System.Drawing.Point(197, 50);
+            this.Label0.Size = new System.Drawing.Size(452, 74);
+
             //
             // Label1
             //
@@ -93,6 +96,14 @@
             this.Button6.Location = new System.Drawing.Point(236,404);
             this.Button6.Size = new System.Drawing.Size(152,76);
             this.Button6.TabIndex = 6;
+
+
+            this.RetrieveBooksButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.RetrieveBooksButton.Text = "Retrieve Most Borrowed Books";
+            this.RetrieveBooksButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RetrieveBooksButton.ForeColor = System.Drawing.Color.Black;
+            this.RetrieveBooksButton.Location = new System.Drawing.Point(295, 550);
+            this.RetrieveBooksButton.Size = new System.Drawing.Size(350, 60);
          //
          // form
          //
@@ -105,6 +116,7 @@
             this.Controls.Add(this.Button3);
             this.Controls.Add(this.Button4);
             this.Controls.Add(this.Button6);
+            this.Controls.Add(this.RetrieveBooksButton);
             this.ResumeLayout(false);
         } 
 
@@ -116,5 +128,7 @@
         private System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Button Button4;
         private System.Windows.Forms.Button Button6;
+         private System.Windows.Forms.Button RetrieveBooksButton;
+
     }
 }
