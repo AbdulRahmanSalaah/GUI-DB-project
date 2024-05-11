@@ -44,6 +44,8 @@ namespace library_app
 
 
 
+            // string connString = @"Data Source=OMAR;Initial Catalog=LibraryDatabase;Integrated Security=True;";
+
             string connString = @"Data Source=LAPTOP-DG70P2RU;Initial Catalog=LibraryDatabase;Integrated Security=True;";
             SqlConnection conn = new SqlConnection(connString);
 
@@ -69,12 +71,16 @@ namespace library_app
 
                 // MessageBox.Show(userId);
 
+                // Delete the top copy from the Copy table
+                string deleteTopCopyQuery = "DELETE FROM Copy WHERE ISBN = @ISBN AND copyNum = (SELECT MAX(copyNum) FROM Copy WHERE ISBN = @ISBN)";
+                SqlCommand deleteTopCopyCommand = new SqlCommand(deleteTopCopyQuery, conn);
+                deleteTopCopyCommand.Parameters.AddWithValue("@ISBN", isbn);
+                deleteTopCopyCommand.ExecuteNonQuery();
+
                 // Update the number of copies of the book
                 string sqlUpdate = "UPDATE Book SET  number_of_copies = number_of_copies - 1 WHERE ISBN = @ISBN";
                 SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, conn);
                 cmdUpdate.Parameters.AddWithValue("@ISBN", isbn);
-
-
 
                 cmdUpdate.ExecuteNonQuery();
 
@@ -82,37 +88,6 @@ namespace library_app
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Book Borrowed Successfully");
-
-
-                // ---------------------------------------------- check num of copy it zero delete the book
-
-                string sqlCheckCopies = "SELECT number_of_copies FROM Book WHERE ISBN = @ISBN";
-                SqlCommand cmdCheckCopies = new SqlCommand(sqlCheckCopies, conn);
-                cmdCheckCopies.Parameters.AddWithValue("@ISBN", isbn);
-
-                int copies = Convert.ToInt32(cmdCheckCopies.ExecuteScalar());
-
-                if (copies == 0)
-                {
-                    string deletfromborrow = "DELETE FROM Borrow where ISBN =@ISBN ";
-
-                    SqlCommand del = new SqlCommand(deletfromborrow, conn);
-                    del.Parameters.AddWithValue("@ISBN", isbn);
-                    del.ExecuteNonQuery();
-
-
-
-                    string sqlDelete = "DELETE FROM Book WHERE ISBN = @ISBN";
-                    SqlCommand cmdDelete = new SqlCommand(sqlDelete, conn);
-                    cmdDelete.Parameters.AddWithValue("@ISBN", isbn);
-
-
-                    cmdDelete.ExecuteNonQuery();
-                }
-
-
-
-
                 this.Hide();
             }
             catch (Exception ex)

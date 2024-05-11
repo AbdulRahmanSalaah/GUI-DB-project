@@ -14,8 +14,8 @@ namespace library_app
         public BrowseBooks()
         {
             InitializeComponent();
-            // string connString = @"Data Source=OMAR;Initial Catalog=LibraryDatabase;Integrated Security=True;";
-            string connString = @"Data Source=LAPTOP-DG70P2RU;Initial Catalog=LibraryDatabase;Integrated Security=True;";
+            //  string connString = @"Data Source=OMAR;Initial Catalog=LibraryDatabase;Integrated Security=True;";
+           string connString = @"Data Source=LAPTOP-DG70P2RU;Initial Catalog=LibraryDatabase;Integrated Security=True;";
             conn = new SqlConnection(connString);
             LoadData(true); // Load full list by default
         }
@@ -90,9 +90,17 @@ namespace library_app
                     }
 
                     // Delete the book by ISBN
+                    string sqlDeleteCopy = "DELETE FROM Copy WHERE ISBN = @ISBN";
+                    string sqlDeleteBorrow = "DELETE FROM Borrow WHERE ISBN = @ISBN";
                     string sqlDeleteBook = "DELETE FROM Book WHERE ISBN = @ISBN";
                     SqlCommand cmdDeleteBook = new SqlCommand(sqlDeleteBook, conn);
+                    SqlCommand cmdDeleteBorrow = new SqlCommand(sqlDeleteBorrow, conn);
+                    SqlCommand cmdDeleteCopy = new SqlCommand(sqlDeleteCopy, conn);
+                    cmdDeleteCopy.Parameters.AddWithValue("@ISBN", isbn);
+                    cmdDeleteBorrow.Parameters.AddWithValue("@ISBN", isbn);
                     cmdDeleteBook.Parameters.AddWithValue("@ISBN", isbn);
+                    int rowsAffected1 = cmdDeleteCopy.ExecuteNonQuery();
+                    int rowsAffected0 = cmdDeleteBorrow.ExecuteNonQuery();
                     int rowsAffected = cmdDeleteBook.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
