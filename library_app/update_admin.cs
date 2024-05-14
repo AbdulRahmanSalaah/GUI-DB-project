@@ -33,7 +33,9 @@ namespace library_app
 
         private void Button0_Click(object? sender, EventArgs e)
         {
-            var datasource = @"LAPTOP-DG70P2RU";//your server
+            // var datasource = @"OMAR";//your server
+
+            var datasource = @"LAPTOP-DG70P2RU";
             // var datasource = @"REVISION-PC";
             var database = "LibraryDatabase"; //your database name
             // var username = "sa"; //username of server to connect
