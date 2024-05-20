@@ -101,7 +101,7 @@ namespace library_app
 
                     if (copies > 0)
                     {
-                       
+
 
 
                         BorrowPage borrowPage = new BorrowPage(userId, isbn);
@@ -112,11 +112,12 @@ namespace library_app
 
                         borrowPage.Show();
 
-
-
-
                     }
-                  
+                    else
+                    {
+                        MessageBox.Show("Error: No copies of the book are available.");
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -134,45 +135,6 @@ namespace library_app
         }
 
 
-        // private void returnButton_Click(object sender, EventArgs e)
-        // {
-        //     if (dataGridView1.CurrentRow != null)
-        //     {
-        //         string isbn = dataGridView1.CurrentRow.Cells["ISBN"].Value.ToString();
 
-        //         try
-        //         {
-        //             conn.Open();
-
-        //             string sqlUpdate = "UPDATE Book SET is_borrowed = 0 WHERE ISBN = @ISBN";
-        //             SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, conn);
-        //             cmdUpdate.Parameters.AddWithValue("@ISBN", isbn);
-
-        //             int rowsAffected = cmdUpdate.ExecuteNonQuery();
-
-        //             if (rowsAffected > 0)
-        //             {
-        //                 MessageBox.Show("Book returned successfully.");
-        //                 LoadData(false);
-        //             }
-        //             else
-        //             {
-        //                 MessageBox.Show("Error: No book found with the specified ISBN.");
-        //             }
-        //         }
-        //         catch (Exception ex)
-        //         {
-        //             MessageBox.Show("Error returning book: " + ex.Message);
-        //         }
-        //         finally
-        //         {
-        //             conn.Close();
-        //         }
-        //     }
-        //     else
-        //     {
-        //         MessageBox.Show("Please select a book to return.");
-        //     }
-        // }
     }
 }

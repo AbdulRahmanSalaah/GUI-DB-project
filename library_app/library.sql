@@ -29,7 +29,6 @@ CREATE TABLE BOOK (
   ISBN varchar(255)  PRIMARY KEY,
   Book_name VARCHAR(255),
   year VARCHAR(255),
-  numOfbooks INTEGER,
   number_of_copies INTEGER,
   A_id varchar(255),
   pub_id varchar(255),
@@ -48,7 +47,6 @@ CREATE TABLE Student (
   address VARCHAR(255),
   mail VARCHAR(255),
   B_date VARCHAR(255),
-  age INTEGER,
   St_phone VARCHAR(255),
   
 );

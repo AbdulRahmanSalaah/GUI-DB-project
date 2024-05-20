@@ -27,7 +27,8 @@ namespace library_app
         private void Button17_Click(object? sender, EventArgs e)
         {
             // var datasource = @"REVISION-PC";
-            var datasource = @"LAPTOP-DG70P2RU";//your server
+            var datasource = @"LAPTOP-DG70P2RU";
+            // var datasource = @"OMAR";//your server
             var database = "LibraryDatabase"; //your database name
 
             string connString = @"Data Source=" + datasource + ";Initial Catalog="
@@ -46,6 +47,32 @@ namespace library_app
                 MessageBox.Show("Connection Successful...");
 
                 string ISBN = TextBox15.Text;
+                string currentCopiesQuery = "SELECT COUNT(*) FROM Copy WHERE ISBN = @ISBN";
+                SqlCommand currentCopiesCmd = new SqlCommand(currentCopiesQuery, conn);
+                currentCopiesCmd.Parameters.AddWithValue("@ISBN", ISBN);
+                int currentCopies = (int)currentCopiesCmd.ExecuteScalar();
+
+                int newCopies = Convert.ToInt32(TextBox6.Text);
+
+                if (currentCopies < newCopies)
+                {
+                    // Insert additional copies
+                    for (int i = 0; i < newCopies - currentCopies; i++)
+                    {
+                        SqlCommand insertCopyCmd = new SqlCommand("INSERT INTO Copy (ISBN) VALUES (@ISBN)", conn);
+                        insertCopyCmd.Parameters.AddWithValue("@ISBN", ISBN);
+                        insertCopyCmd.ExecuteNonQuery();
+                    }
+                }
+                else if (currentCopies > newCopies)
+                {
+                    // Delete excess copies
+                    SqlCommand deleteCopyCmd = new SqlCommand("DELETE FROM Copy WHERE ISBN = @ISBN " +
+                                                               "AND copyNum IN (SELECT TOP(@ToDelete) copyNum FROM Copy WHERE ISBN = @ISBN ORDER BY copyNum DESC)", conn);
+                    deleteCopyCmd.Parameters.AddWithValue("@ISBN", ISBN);
+                    deleteCopyCmd.Parameters.AddWithValue("@ToDelete", currentCopies - newCopies);
+                    deleteCopyCmd.ExecuteNonQuery();
+                }
 
                 string sqlQueryAuthorId = "SELECT author_id FROM BOOK WHERE ISBN = @ISBN";
                 SqlCommand commandAuthorId = new SqlCommand(sqlQueryAuthorId, conn);
@@ -100,7 +127,7 @@ namespace library_app
                     MessageBox.Show("Book details updated successfully!");
                     this.Hide();
                     main_admin main_admin = new main_admin(adminId);
-                    
+
                     // main_admin.Show();
                 }
                 else
